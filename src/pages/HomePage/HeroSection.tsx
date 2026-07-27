@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowDown, Ticket, Calendar, MapPin, ExternalLink } from 'lucide-react'
+import { useT } from '@/i18n/context'
 import { MOCK_COMPANY } from '@/data/company'
 
 const TEENTOP_POSTER = 'https://aka.doubaocdn.com/s/oCDv1wqgmM'
@@ -10,6 +11,7 @@ export default function HeroSection() {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 80])
   const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0.2])
+  const { t } = useT()
 
   const handleScrollTo = (e: React.MouseEvent, target: string) => {
     e.preventDefault()
@@ -54,39 +56,38 @@ export default function HeroSection() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-bold tracking-wider mb-6 shadow-lg shadow-primary/30">
               <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
-              火热进行中 · HOT
+              {t('hero.status')}
             </div>
 
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2">
-              2026 TEEN TOP
+              {t('hero.title')}
             </h2>
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight text-foreground leading-[1.1] mb-4">
-              粉丝见面会
+              {t('hero.subtitle')}
               <br />
               <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-                中国站
+                {t('hero.locationTag')}
               </span>
             </h1>
 
             <div className="flex flex-wrap gap-4 md:gap-6 mb-6">
               <div className="flex items-center gap-2 text-muted-foreground text-sm">
                 <Calendar className="size-4 text-primary" />
-                <span>2026.08.29</span>
+                <span>{t('hero.date')}</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground text-sm">
                 <MapPin className="size-4 text-primary" />
-                <span>重庆</span>
+                <span>{t('hero.location')}</span>
               </div>
             </div>
 
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-primary/30 bg-primary/10 text-foreground text-sm font-semibold mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shrink-0" />
-              二代男团近10年首次登陆国内
+              {t('hero.highlight')}
             </div>
 
             <p className="text-muted-foreground text-base leading-relaxed mb-8 max-w-lg">
-              韩国二代传奇男团 TEEN TOP 首次登陆国内，举办专属粉丝见面会。
-              全场近距离互动、粉丝福利环节、签名合影机会，一场专属于粉丝的见面盛会。
+              {t('hero.description')}
             </p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
@@ -97,7 +98,7 @@ export default function HeroSection() {
                 className="group relative px-6 sm:px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 flex items-center justify-center gap-2 text-center"
               >
                 <Ticket className="size-5 shrink-0" />
-                <span>立即购票</span>
+                <span>{t('hero.buyTicket')}</span>
                 <ExternalLink className="size-4 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <a
@@ -105,7 +106,7 @@ export default function HeroSection() {
                 onClick={(e) => handleScrollTo(e, '#cases')}
                 className="px-6 sm:px-8 py-4 border border-border/60 text-foreground font-medium rounded-lg hover:bg-muted/50 hover:border-border transition-all duration-300 flex items-center justify-center gap-2 text-center"
               >
-                查看更多活动
+                {t('hero.viewMore')}
                 <ArrowDown className="size-4 shrink-0" />
               </a>
             </div>
@@ -128,7 +129,7 @@ export default function HeroSection() {
                   playsInline
                   poster={TEENTOP_POSTER}
                   className="w-full h-auto object-cover aspect-[9/16]"
-                  aria-label="2026 TEEN TOP 粉丝见面会宣传视频"
+                  aria-label={t('hero.videoAria')}
                 >
                   <source src="/videos/teen-top-promo.mp4" type="video/mp4" />
                 </video>
@@ -153,15 +154,15 @@ export default function HeroSection() {
                 {MOCK_COMPANY.nameEn}
               </div>
               <div className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
-                连接中韩娱乐的年轻力量
+                {t('hero.tagline')}
               </div>
             </div>
             <div className="text-left sm:text-right">
               <div className="text-xs text-muted-foreground tracking-widest uppercase mb-1">
-                Since 2023
+                {t('hero.since')}
               </div>
               <div className="text-sm text-foreground/80">
-                {MOCK_COMPANY.positioning}
+                {t('company.positioning')}
               </div>
             </div>
           </div>
@@ -176,7 +177,7 @@ export default function HeroSection() {
         className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20"
       >
         <div className="flex flex-col items-center gap-2 text-muted-foreground/60">
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
+          <span className="text-xs tracking-widest uppercase">{t('hero.scroll')}</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}

@@ -4,6 +4,7 @@ import { MapPin, Mail, ExternalLink, CheckCircle } from 'lucide-react'
 import { MOCK_CONTACT } from '@/data/contact'
 import { Button } from '@/components/ui/button'
 import { toast } from 'sonner'
+import { useT } from '@/i18n/context'
 
 const SocialIcon = ({ platform }: { platform: string }) => {
   const icons: Record<string, React.ReactElement> = {
@@ -27,6 +28,7 @@ const SocialIcon = ({ platform }: { platform: string }) => {
 }
 
 export default function ContactSection() {
+  const { t } = useT()
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
@@ -40,7 +42,7 @@ export default function ContactSection() {
     const message = formData.get('message')
 
     if (!name || !phone) {
-      toast.error('请填写姓名和联系电话')
+      toast.error(t('contact.toastError'))
       return
     }
 
@@ -68,7 +70,7 @@ export default function ContactSection() {
     setTimeout(() => {
       setSubmitting(false)
       setSubmitted(true)
-      toast.success('合作意向已提交，我们将在 24 小时内与您联系')
+      toast.success(t('contact.toastSuccess'))
       ;(e.currentTarget as HTMLFormElement).reset()
       setTimeout(() => setSubmitted(false), 5000)
     }, 1000)
@@ -88,17 +90,17 @@ export default function ContactSection() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-medium tracking-wider mb-6">
-              CONTACT
+              {t('contact.badge')}
             </div>
             <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-tight mb-6">
-              开启合作
+              {t('contact.title1')}
               <br />
               <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                联系我们
+                {t('contact.title2')}
               </span>
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-10 max-w-lg">
-              无论是艺人合作、活动策划还是品牌商务，Francisco Entertainment 团队随时准备为您提供专业服务。
+              {t('contact.desc')}
             </p>
 
             <div className="space-y-4">
@@ -113,7 +115,7 @@ export default function ContactSection() {
                   <MapPin className="size-5 text-primary" />
                 </div>
                 <div>
-                  <div className="text-sm text-muted-foreground mb-1">公司地址</div>
+                  <div className="text-sm text-muted-foreground mb-1">{t('contact.addressLabel')}</div>
                   <div className="text-foreground font-medium">{MOCK_CONTACT.address}</div>
                 </div>
               </motion.div>
@@ -129,7 +131,7 @@ export default function ContactSection() {
                   <Mail className="size-5 text-primary" />
                 </div>
                 <div>
-                  <div className="text-sm text-muted-foreground mb-1">商务合作</div>
+                  <div className="text-sm text-muted-foreground mb-1">{t('contact.emailLabel')}</div>
                   <a
                     href={`mailto:${MOCK_CONTACT.email}`}
                     className="text-foreground font-medium hover:text-primary transition-colors"
@@ -151,7 +153,7 @@ export default function ContactSection() {
           >
             {/* Social Media Cards */}
             <div>
-              <div className="text-sm text-muted-foreground mb-3">关注我们</div>
+              <div className="text-sm text-muted-foreground mb-3">{t('contact.followUs')}</div>
               <div className="grid grid-cols-3 gap-2 sm:gap-3">
                 {MOCK_CONTACT.socialLinks.map((social) => {
                   const isClickable = social.url && social.url !== '#'
@@ -188,7 +190,7 @@ export default function ContactSection() {
                     <div
                       key={social.name}
                       className="flex flex-col items-center gap-1.5 sm:gap-2 p-3 sm:p-4 rounded-xl border border-border/50 bg-background/50 cursor-default opacity-80"
-                      title="暂无网页版主页"
+                      title={t('contact.socialDisabled')}
                     >
                       {cardContent}
                     </div>
@@ -198,33 +200,33 @@ export default function ContactSection() {
             </div>
 
             <div className="p-8 md:p-10 rounded-2xl border border-border/50 bg-background/80 backdrop-blur-sm">
-              <h3 className="text-xl font-bold text-foreground mb-2">发送合作意向</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">{t('contact.formTitle')}</h3>
               <p className="text-sm text-muted-foreground mb-6">
-                填写以下信息，我们将在 24 小时内与您联系
+                {t('contact.formSubtitle')}
               </p>
 
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm text-muted-foreground mb-1.5">
-                      您的姓名
+                      {t('contact.formName')}
                     </label>
                     <input
                       name="name"
                       type="text"
-                      placeholder="请输入姓名"
+                      placeholder={t('contact.formNamePlaceholder')}
                       required
                       className="w-full px-4 py-2.5 rounded-lg bg-card/50 border border-border/50 text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all"
                     />
                   </div>
                   <div>
                     <label className="block text-sm text-muted-foreground mb-1.5">
-                      联系电话
+                      {t('contact.formPhone')}
                     </label>
                     <input
                       name="phone"
                       type="tel"
-                      placeholder="请输入电话"
+                      placeholder={t('contact.formPhonePlaceholder')}
                       required
                       className="w-full px-4 py-2.5 rounded-lg bg-card/50 border border-border/50 text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all"
                     />
@@ -232,42 +234,42 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label className="block text-sm text-muted-foreground mb-1.5">
-                    公司/机构
-                  </label>
-                  <input
-                    name="company"
-                    type="text"
-                    placeholder="请输入公司名称"
+                    <label className="block text-sm text-muted-foreground mb-1.5">
+                      {t('contact.formCompany')}
+                    </label>
+                    <input
+                      name="company"
+                      type="text"
+                      placeholder={t('contact.formCompanyPlaceholder')}
                     className="w-full px-4 py-2.5 rounded-lg bg-card/50 border border-border/50 text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-muted-foreground mb-1.5">
-                    合作类型
-                  </label>
-                  <select
-                    name="type"
-                    className="w-full px-4 py-2.5 rounded-lg bg-card/50 border border-border/50 text-foreground text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all"
-                    defaultValue=""
-                  >
-                    <option value="" disabled>请选择合作类型</option>
-                    <option value="artist">艺人经纪合作</option>
-                    <option value="event">活动策划执行</option>
-                    <option value="business">商务品牌合作</option>
-                    <option value="other">其他合作</option>
-                  </select>
+                    <label className="block text-sm text-muted-foreground mb-1.5">
+                      {t('contact.formType')}
+                    </label>
+                    <select
+                      name="type"
+                      className="w-full px-4 py-2.5 rounded-lg bg-card/50 border border-border/50 text-foreground text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>{t('contact.formTypePlaceholder')}</option>
+                      <option value="artist">{t('contact.formTypeOpt1')}</option>
+                      <option value="event">{t('contact.formTypeOpt2')}</option>
+                      <option value="business">{t('contact.formTypeOpt3')}</option>
+                      <option value="other">{t('contact.formTypeOpt4')}</option>
+                    </select>
                 </div>
 
                 <div>
-                  <label className="block text-sm text-muted-foreground mb-1.5">
-                    合作描述
-                  </label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    placeholder="请简要描述您的合作需求..."
+                    <label className="block text-sm text-muted-foreground mb-1.5">
+                      {t('contact.formDesc')}
+                    </label>
+                    <textarea
+                      name="message"
+                      rows={4}
+                      placeholder={t('contact.formDescPlaceholder')}
                     className="w-full px-4 py-2.5 rounded-lg bg-card/50 border border-border/50 text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all resize-none"
                   />
                 </div>
@@ -275,11 +277,11 @@ export default function ContactSection() {
                 {submitted ? (
                   <div className="flex items-center justify-center gap-2 w-full py-6 bg-success/20 text-success-foreground font-semibold rounded-lg border border-success/30">
                     <CheckCircle className="size-5" />
-                    提交成功，我们将尽快与您联系
+                    {t('contact.submitSuccess')}
                   </div>
                 ) : (
                   <Button type="submit" className="w-full py-6 font-semibold" disabled={submitting}>
-                    {submitting ? '提交中...' : '提交合作意向'}
+                    {submitting ? t('contact.submitting') : t('contact.submit')}
                   </Button>
                 )}
               </form>

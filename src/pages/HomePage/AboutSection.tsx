@@ -1,26 +1,27 @@
 import { motion } from 'framer-motion'
 import { Heart, Compass, Sparkles } from 'lucide-react'
 import { MOCK_ABOUT } from '@/data/about'
-import { MOCK_COMPANY } from '@/data/company'
+import { useT } from '@/i18n/context'
 
 export default function AboutSection() {
+  const { t } = useT()
   const about = MOCK_ABOUT[0]
 
   const narrativeBlocks = [
     {
       icon: Compass,
-      title: '品牌定位',
-      text: '我们是一家以艺人经纪与文化交流为核心的娱乐公司，起步于中韩艺人合作，未来将携手更多国内外优秀艺术家，跨越国界与语言，让好的内容被更多人看见。',
+      title: t('about.block1Title'),
+      text: t('about.block1Content'),
     },
     {
       icon: Heart,
-      title: '使命愿景',
-      text: '我们相信每一次相遇都有意义，每一场见面都值得被认真对待。\n不急于规模，不困于当下——\n我们选择一步一个脚印，把每一个项目做扎实，让每一位合作的艺人都被善待，每一位到场的观众都不留遗憾。',
+      title: t('about.block2Title'),
+      text: t('about.block2Content'),
     },
     {
       icon: Sparkles,
-      title: '我们的态度',
-      text: '「成长比成功更重要」\n起步虽晚，但步履不停。\n我们带着诚意与决心前行，在每一次合作中积累经验，在每一场活动中打磨自己。\n来日方长，我们终将成为值得信赖的名字。',
+      title: t('about.block3Title'),
+      text: t('about.block3Content'),
     },
   ]
 
@@ -39,13 +40,13 @@ export default function AboutSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-medium tracking-wider mb-6">
-              ABOUT US
+              {t('about.badge')}
             </div>
 
             <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-tight mb-4">
-              关于
+              {t('about.prefix')}
               <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-                {' '}Francisco Entertainment
+                {t('about.highlight')}
               </span>
             </h2>
 
@@ -91,8 +92,8 @@ export default function AboutSection() {
               className="mt-10 pt-8 border-t border-border/40"
             >
               <p className="text-foreground font-semibold text-lg italic">
-                Francisco Entertainment ——{' '}
-                <span className="text-primary">用心连接每一份热爱。</span>
+                {t('about.mottoPrefix')}{' '}
+                <span className="text-primary">{t('about.motto')}</span>
               </p>
             </motion.div>
           </motion.div>
@@ -162,7 +163,7 @@ export default function AboutSection() {
                       ♥
                     </div>
                     <p className="text-[9px] sm:text-[10px] text-[#ffb3ba] font-bold tracking-[0.2em] uppercase mb-2 sm:mb-3">
-                      ✦ since 2023 ✦
+                      {t('about.since')}
                     </p>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-black text-foreground leading-tight mb-1">
                       Francisco
@@ -173,7 +174,7 @@ export default function AboutSection() {
                       </span>
                     </h3>
                     <p className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-border/40 text-[11px] sm:text-xs md:text-sm text-muted-foreground font-light italic tracking-wide">
-                      "Where Talent Meets Opportunity"
+                      {t('about.tagline')}
                     </p>
                   </div>
                 </motion.div>
@@ -197,8 +198,8 @@ export default function AboutSection() {
 
               {/* Founder Badge */}
               <div className="absolute top-4 sm:top-6 right-4 sm:right-6 px-3 sm:px-4 py-2 sm:py-3 bg-background/80 backdrop-blur-md rounded-xl border border-border/40 z-10">
-                <div className="text-[10px] sm:text-xs text-muted-foreground tracking-wide">创始人</div>
-                <div className="text-xs sm:text-sm font-bold text-foreground">{MOCK_COMPANY.founder}</div>
+                <div className="text-[10px] sm:text-xs text-muted-foreground tracking-wide">{t('about.founderLabel')}</div>
+                <div className="text-xs sm:text-sm font-bold text-foreground">{t('about.founderName')}</div>
               </div>
             </div>
           </motion.div>

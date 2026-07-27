@@ -3,10 +3,12 @@ import { ArrowUpRight, Calendar, Tag, MapPin, Flame, ExternalLink } from 'lucide
 import { MOCK_CASES } from '@/data/cases'
 import { Badge } from '@/components/ui/badge'
 import { Image } from '@/components/ui/image'
+import { useT } from '@/i18n/context'
 
 const TICKET_URL = 'https://you.ctrip.com/sight/chongqing158/156424489.html'
 
 export default function CasesSection() {
+  const { t } = useT()
   const container = {
     hidden: {},
     visible: {
@@ -38,13 +40,13 @@ export default function CasesSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-medium tracking-wider mb-6">
-            PORTFOLIO
+            {t('cases.badge')}
           </div>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-tight mb-4">
-            成功案例
+            {t('cases.title')}
           </h2>
           <p className="text-muted-foreground text-base md:text-lg">
-            精选代表性项目，见证饭壳文化的专业实力
+            {t('cases.subtitle')}
           </p>
         </motion.div>
 
@@ -74,13 +76,13 @@ export default function CasesSection() {
                       <div className="col-span-2 relative aspect-[3/4] lg:aspect-auto overflow-hidden border-l border-border/30">
                         <Image
                           src={featuredCase.extraImageUrl}
-                          alt={`${featuredCase.name} - 福利表`}
+                          alt={t('cases.benefitAlt')}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
                         <div className="absolute bottom-3 left-3 right-3">
                           <Badge variant="secondary" className="bg-background/70 backdrop-blur-sm text-xs">
-                            粉丝福利表
+                            {t('cases.benefitBadge')}
                           </Badge>
                         </div>
                       </div>
@@ -90,7 +92,7 @@ export default function CasesSection() {
                   <div className="absolute top-4 left-4 z-20">
                     <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-bold tracking-wider shadow-lg shadow-primary/30">
                       <Flame className="size-3.5" />
-                      {featuredCase.status}
+                      {t('cases.featuredStatus')}
                     </div>
                   </div>
                 </div>
@@ -100,7 +102,7 @@ export default function CasesSection() {
                   <div className="flex flex-wrap items-center gap-2 mb-4">
                     <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 text-xs">
                       <Tag className="size-3 mr-1.5" />
-                      {featuredCase.type}
+                      {t('cases.featuredType')}
                     </Badge>
                     <Badge variant="outline" className="text-muted-foreground text-xs">
                       <Calendar className="size-3 mr-1.5" />
@@ -117,16 +119,16 @@ export default function CasesSection() {
                   {featuredCase.highlight && (
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-primary/30 bg-primary/10 text-foreground text-xs sm:text-sm font-semibold mb-4">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shrink-0" />
-                      {featuredCase.highlight}
+                      {t('cases.featuredHighlight')}
                     </div>
                   )}
 
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-foreground leading-tight mb-4">
-                    {featuredCase.name}
+                    {t('case.1.name')}
                   </h3>
 
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6 sm:mb-8">
-                    {featuredCase.description}
+                    {t('case.1.desc')}
                   </p>
 
                   <div className="flex flex-col xs:flex-row gap-3">
@@ -136,7 +138,7 @@ export default function CasesSection() {
                       rel="noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 text-sm sm:text-base"
                     >
-                      立即购票
+                      {t('cases.buyTicket')}
                       <ExternalLink className="size-4" />
                     </a>
                     <a
@@ -144,7 +146,7 @@ export default function CasesSection() {
                       onClick={(e) => handleScrollTo(e, '#contact')}
                     >
                       <button className="w-full inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 border border-border/60 text-foreground font-medium rounded-lg hover:bg-muted/50 hover:border-border transition-all duration-300 text-sm sm:text-base">
-                        咨询合作
+                        {t('cases.consult')}
                         <ArrowUpRight className="size-4" />
                       </button>
                     </a>
@@ -250,10 +252,10 @@ export default function CasesSection() {
                   {caseItem.date}
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                  {caseItem.name}
+                  {t(`case.${caseItem.id}.name`)}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                  {caseItem.description}
+                  {t(`case.${caseItem.id}.desc`)}
                 </p>
               </div>
 
@@ -271,7 +273,7 @@ export default function CasesSection() {
         >
           <a href="#contact" onClick={(e) => handleScrollTo(e, '#contact')}>
             <button className="inline-flex items-center gap-2 px-6 py-3 border border-border/60 rounded-lg text-foreground font-medium hover:bg-muted/50 hover:border-border transition-all duration-300">
-              合作咨询
+              {t('cases.bottomCta')}
               <ArrowUpRight className="size-4" />
             </button>
           </a>

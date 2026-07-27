@@ -3,19 +3,22 @@ import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cn } from '@/lib/utils'
+import { useT } from '@/i18n/context'
 import Logo from './Logo'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const NAV_ITEMS = [
-  { label: '首页', href: '#hero' },
-  { label: '关于我们', href: '#about' },
-  { label: '成功案例', href: '#cases' },
-  { label: '联系我们', href: '#contact' },
-]
+  { labelKey: 'nav.home', href: '#hero' },
+  { labelKey: 'nav.about', href: '#about' },
+  { labelKey: 'nav.cases', href: '#cases' },
+  { labelKey: 'nav.contact', href: '#contact' },
+] as const
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const isMobile = useIsMobile()
+  const { t } = useT()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,19 +71,20 @@ export default function Header() {
                 onClick={(e) => handleNavClick(e, item.href)}
                 className="px-4 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 rounded-md"
               >
-                {item.label}
+                {t(item.labelKey)}
               </a>
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:block">
+          {/* Right side: CTA + Language */}
+          <div className="hidden md:flex items-center gap-2">
+            <LanguageSwitcher />
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
             >
               <Button size="sm" className="font-medium">
-                商务合作
+                {t('nav.business')}
               </Button>
             </a>
           </div>
@@ -91,7 +95,7 @@ export default function Header() {
             size="icon"
             className="md:hidden text-foreground"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="菜单"
+                        aria-label={t('nav.menu')}
           >
             {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
           </Button>
@@ -109,7 +113,7 @@ export default function Header() {
                 onClick={(e) => handleNavClick(e, item.href)}
                 className="px-4 py-3 text-base font-medium rounded-md text-foreground hover:bg-muted transition-colors"
               >
-                {item.label}
+                {t(item.labelKey)}
               </a>
             ))}
             <div className="pt-2">
@@ -118,7 +122,7 @@ export default function Header() {
                 onClick={(e) => handleNavClick(e, '#contact')}
               >
                 <Button className="w-full" size="sm">
-                  商务合作
+                  {t('nav.business')}
                 </Button>
               </a>
             </div>

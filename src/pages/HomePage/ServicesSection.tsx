@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { User, Calendar, Briefcase, ArrowUpRight } from 'lucide-react'
 import { MOCK_SERVICES } from '@/data/services'
+import { useT } from '@/i18n/context'
 import { cn } from '@/lib/utils'
 
 const iconMap: Record<string, typeof User> = {
@@ -10,6 +11,7 @@ const iconMap: Record<string, typeof User> = {
 }
 
 export default function ServicesSection() {
+  const { t } = useT()
   const container = {
     hidden: {},
     visible: {
@@ -38,13 +40,13 @@ export default function ServicesSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-medium tracking-wider mb-6">
-            SERVICES
+            {t('services.badge')}
           </div>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground leading-tight mb-4">
-            业务板块
+            {t('services.title')}
           </h2>
           <p className="text-muted-foreground text-base md:text-lg">
-            三大核心业务，覆盖艺人经纪、活动策划与商务合作全链路
+            {t('services.subtitle')}
           </p>
         </motion.div>
 
@@ -82,23 +84,23 @@ export default function ServicesSection() {
                   </div>
 
                   <h3 className="text-xl font-bold text-foreground mb-3">
-                    {service.title}
+                    {t(`services.s${service.id}.title`)}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    {service.description}
+                    {t(`services.s${service.id}.desc`)}
                   </p>
 
                   <ul className="space-y-2.5 mb-8">
-                    {service.features.map((feat, i) => (
+                    {service.features.map((_feat, i) => (
                       <li key={i} className="flex items-center gap-2.5 text-sm text-foreground/80">
                         <span className="w-1 h-1 rounded-full bg-primary" />
-                        {feat}
+                        {t(`services.s${service.id}.f${i + 1}`)}
                       </li>
                     ))}
                   </ul>
 
                   <div className="flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    了解详情
+                    {t('services.cta')}
                     <ArrowUpRight className="size-4" />
                   </div>
 
