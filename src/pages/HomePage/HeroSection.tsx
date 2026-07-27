@@ -22,24 +22,23 @@ export default function HeroSection() {
       id="hero"
       className="relative w-full min-h-screen flex items-center overflow-hidden pt-20 pb-16"
     >
-      {/* Background with Parallax */}
+      {/* Background Video with Parallax */}
       <motion.div style={{ y }} className="absolute inset-0 z-0">
-        {/* Subtle gradient + dot pattern to replace broken background image */}
-        <div
-          className="w-full h-full scale-110"
-          style={{
-            background: `
-              radial-gradient(ellipse at 30% 20%, hsl(353 99% 29% / 0.12) 0%, transparent 50%),
-              radial-gradient(ellipse at 70% 60%, hsl(353 99% 29% / 0.08) 0%, transparent 50%),
-              radial-gradient(circle, hsl(0 0% 100% / 0.03) 1px, transparent 1px)
-            `,
-            backgroundSize: '100% 100%, 100% 100%, 32px 32px',
-          }}
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={TEENTOP_POSTER}
+          className="w-full h-full object-cover scale-110"
+          aria-label="2026 TEEN TOP 粉丝见面会宣传视频"
+        >
+          <source src="/videos/teen-top-promo.mp4" type="video/mp4" />
+        </video>
       </motion.div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-background/70 via-background/50 to-background pointer-events-none" />
+      {/* Gradient Overlay for text readability */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-background/80 via-background/60 to-background pointer-events-none" />
 
       {/* Content */}
       <motion.div
