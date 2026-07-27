@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cn } from '@/lib/utils'
-import { Image } from '@/components/ui/image'
+import Logo from './Logo'
 
 const NAV_ITEMS = [
   { label: '首页', href: '#hero' },
@@ -11,8 +11,6 @@ const NAV_ITEMS = [
   { label: '成功案例', href: '#cases' },
   { label: '联系我们', href: '#contact' },
 ]
-
-const LOGO_LIGHT = 'https://aka.doubaocdn.com/s/6dYV1wqi2R'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -58,14 +56,7 @@ export default function Header() {
             onClick={(e) => handleNavClick(e, '#hero')}
             className="flex items-center gap-2 group"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full scale-150 opacity-60" />
-              <Image
-                src={LOGO_LIGHT}
-                alt="饭壳文化 Francisco Entertainment"
-                className="relative h-12 md:h-16 w-auto object-contain drop-shadow-[0_2px_8px_rgba(255_255_255_0.15)] [mix-blend-mode:screen]"
-              />
-            </div>
+            <Logo />
           </a>
 
           {/* Desktop Nav */}
