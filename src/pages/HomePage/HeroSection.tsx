@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowDown, Ticket, Calendar, MapPin, ExternalLink } from 'lucide-react'
 import { MOCK_COMPANY } from '@/data/company'
-import { Image } from '@/components/ui/image'
 
 const TEENTOP_POSTER = 'https://aka.doubaocdn.com/s/oCDv1wqgmM'
 
@@ -22,23 +21,23 @@ export default function HeroSection() {
       id="hero"
       className="relative w-full min-h-screen flex items-center overflow-hidden pt-20 pb-16"
     >
-      {/* Background Video with Parallax */}
+      {/* Background with Parallax */}
       <motion.div style={{ y }} className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={TEENTOP_POSTER}
-          className="w-full h-full object-cover scale-110"
-          aria-label="2026 TEEN TOP 粉丝见面会宣传视频"
-        >
-          <source src="/videos/teen-top-promo.mp4" type="video/mp4" />
-        </video>
+        <div
+          className="w-full h-full scale-110"
+          style={{
+            background: `
+              radial-gradient(ellipse at 30% 20%, hsl(353 99% 29% / 0.12) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 60%, hsl(353 99% 29% / 0.08) 0%, transparent 50%),
+              radial-gradient(circle, hsl(0 0% 100% / 0.03) 1px, transparent 1px)
+            `,
+            backgroundSize: '100% 100%, 100% 100%, 32px 32px',
+          }}
+        />
       </motion.div>
 
-      {/* Gradient Overlay for text readability */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-background/80 via-background/60 to-background pointer-events-none" />
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-background/70 via-background/50 to-background pointer-events-none" />
 
       {/* Content */}
       <motion.div
@@ -120,13 +119,19 @@ export default function HeroSection() {
             className="order-1 lg:order-2 flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-[280px] sm:max-w-sm mx-auto lg:mx-0">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-border/30">
-                <Image
-                  src={TEENTOP_POSTER}
-                  alt="2026 TEEN TOP 粉丝见面会 中国站"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-border/30 bg-black">
+                <video
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster={TEENTOP_POSTER}
+                  className="w-full h-auto object-cover aspect-[9/16]"
+                  aria-label="2026 TEEN TOP 粉丝见面会宣传视频"
+                >
+                  <source src="/videos/teen-top-promo.mp4" type="video/mp4" />
+                </video>
               </div>
 
               <div className="absolute -top-3 -right-3 w-16 h-16 sm:w-20 sm:h-20 border-2 border-primary/40 rounded-2xl -z-10" />
