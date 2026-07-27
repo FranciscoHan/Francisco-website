@@ -17,7 +17,7 @@ export const MOCK_COMPANY: ICompany = {
   id: '1',
   name: '饭壳文化',
   nameEn: 'Francisco Entertainment',
-  tagline: '连接中韩娱乐的年轻力量',
+  tagline: '让热爱更近一点',
   subtitle: '饭壳文化 · Francisco Entertainment',
   description: '饭壳文化是一家专注于涉外娱乐经纪的创新型公司，总部位于杭州。我们致力于搭建中韩娱乐产业的合作桥梁，为艺人、品牌和粉丝创造卓越价值。',
   positioning: '专注涉外娱乐经纪的新锐公司',

@@ -34,7 +34,7 @@ const translations = {
     'hero.buyTicket': '立即购票',
     'hero.viewMore': '查看更多活动',
     'hero.videoAria': '2026 TEEN TOP 粉丝见面会宣传视频',
-    'hero.tagline': '连接中韩娱乐的年轻力量',
+    'hero.tagline': '让热爱更近一点',
     'hero.since': 'Since 2023',
     'hero.scroll': 'Scroll',
 
@@ -151,7 +151,7 @@ const translations = {
     // Company
     'company.nameZh': '饭壳文化',
     'company.nameEn': 'Francisco Entertainment',
-    'company.tagline': '连接中韩娱乐的年轻力量',
+    'company.tagline': '让热爱更近一点',
     'company.subtitle': '饭壳文化 · Francisco Entertainment',
     'company.description':
       '饭壳文化是一家专注于涉外娱乐经纪的创新型公司，总部位于杭州。我们致力于搭建中韩娱乐产业的合作桥梁，为艺人、品牌和粉丝创造卓越价值。',
@@ -185,17 +185,17 @@ const translations = {
     // Hero — Event details stay Chinese (poster/material text)
     'hero.status': 'Now Open · HOT',
     'hero.title': '2026 TEEN TOP',
-    'hero.subtitle': '粉丝见面会',
-    'hero.locationTag': '中国站',
-    'hero.location': '重庆',
+    'hero.subtitle': 'Fan Meeting',
+    'hero.locationTag': 'China Tour',
+    'hero.location': 'Chongqing',
     'hero.date': '2026.08.29',
-    'hero.highlight': '二代男团近10年首次登陆国内',
+    'hero.highlight': '2nd-gen K-pop group, first China appearance in nearly a decade',
     'hero.description':
-      '韩国二代传奇男团 TEEN TOP 首次登陆国内，举办专属粉丝见面会。全场近距离互动、粉丝福利环节、签名合影机会，一场专属于粉丝的见面盛会。',
+      'Legendary 2nd-gen K-pop group TEEN TOP makes its long-awaited debut in China with an exclusive fan meeting. Up-close interactions, fan benefits, autograph sessions, and photo opportunities — a once-in-a-lifetime experience crafted just for fans.',
     'hero.buyTicket': 'Get Tickets',
     'hero.viewMore': 'More Events',
-    'hero.videoAria': '2026 TEEN TOP 粉丝见面会宣传视频',
-    'hero.tagline': 'Bridging China-Korea Entertainment',
+    'hero.videoAria': '2026 TEEN TOP Fan Meeting Promotional Video',
+    'hero.tagline': 'Closer to the Stage',
     'hero.since': 'Since 2023',
     'hero.scroll': 'Scroll',
 
@@ -318,13 +318,13 @@ const translations = {
     // Company — brand names stay Chinese
     'company.nameZh': '饭壳文化',
     'company.nameEn': 'Francisco Entertainment',
-    'company.tagline': 'Bridging China-Korea Entertainment',
+    'company.tagline': 'Closer to the Stage',
     'company.subtitle': '饭壳文化 · Francisco Entertainment',
     'company.description':
-      '饭壳文化是一家专注于涉外娱乐经纪的创新型公司，总部位于杭州。我们致力于搭建中韩娱乐产业的合作桥梁，为艺人、品牌和粉丝创造卓越价值。',
+      'Francisco Entertainment is an innovative entertainment management company focused on international artist representation, headquartered in Hangzhou. We are dedicated to connecting artists, brands, and fans across borders, creating memorable live experiences.',
     'company.positioning': '专注涉外娱乐经纪的新锐公司',
     'company.headquarters': 'Hangzhou',
-    'company.address': 'Room 807, Building T1, Qiding Center, No. 298 Shixiang Road, Gongshu District, Hangzhou',
+    'company.address': 'Room 807, Building T1, Qiding Center, No. 298 Shixiang Road, Gongshu District, Hangzhou, China',
     'company.email': 'hanyiliang@francisco.com.cn',
     'company.founder': 'Francisco Han',
     'company.founderTitle': 'Founder & CEO',
@@ -353,17 +353,17 @@ const translations = {
     // Hero — Event details stay Chinese (poster/material text)
     'hero.status': '진행 중 · HOT',
     'hero.title': '2026 TEEN TOP',
-    'hero.subtitle': '粉丝见面会',
-    'hero.locationTag': '中国站',
-    'hero.location': '重庆',
+    'hero.subtitle': '팬미팅',
+    'hero.locationTag': '중국 투어',
+    'hero.location': '충칭',
     'hero.date': '2026.08.29',
-    'hero.highlight': '二代男团近10年首次登陆国内',
+    'hero.highlight': '2세대 K-pop 그룹, 10년 만의 첫 중국 방문',
     'hero.description':
-      '韩国二代传奇男团 TEEN TOP 首次登陆国内，举办专属粉丝见面会。全场近距离互动、粉丝福利环节、签名合影机会，一场专属于粉丝的见面盛会。',
+      '한국 전설의 2세대 K-pop 그룹 TEEN TOP이 오랜 기다림 끝에 중국에서 단독 팬미팅을 개최합니다. 가까운 거리에서의 만남, 팬 혜택 이벤트, 사인회와 포토타임까지 — 팬들을 위한 단 하나뿐인 특별한 경험을 선사합니다.',
     'hero.buyTicket': '티켓 예매',
     'hero.viewMore': '더 많은 이벤트',
-    'hero.videoAria': '2026 TEEN TOP 粉丝见面会宣传视频',
-    'hero.tagline': '한중 엔터테인먼트를 잇는 젊은 힘',
+    'hero.videoAria': '2026 TEEN TOP 팬미팅 프로모션 영상',
+    'hero.tagline': '무대와 팬을 더 가깝게',
     'hero.since': 'Since 2023',
     'hero.scroll': 'Scroll',
 
@@ -484,10 +484,10 @@ const translations = {
     // Company — brand names stay Chinese
     'company.nameZh': '饭壳文化',
     'company.nameEn': 'Francisco Entertainment',
-    'company.tagline': '한중 엔터테인먼트를 잇는 젊은 힘',
+    'company.tagline': '무대와 팬을 더 가깝게',
     'company.subtitle': '饭壳文化 · Francisco Entertainment',
     'company.description':
-      '饭壳文化是一家专注于涉外娱乐经纪的创新型公司，总部位于杭州。我们致力于搭建中韩娱乐产业的合作桥梁，为艺人、品牌和粉丝创造卓越价值。',
+      'Francisco Entertainment는 항저우에 본사를 둔 해외 엔터테인먼트 매니지먼트 전문 기업입니다. 아티스트, 브랜드, 팬을 연결하여 국경을 넘어 잊지 못할 현장 경험을 만들어갑니다.',
     'company.positioning': '专注涉外娱乐经纪的新锐公司',
     'company.headquarters': '항저우',
     'company.address': '중국 저장성 항저우시 궁수구 스샹루 298호 치딩센터 T1동 807호',
