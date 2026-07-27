@@ -182,19 +182,19 @@ const translations = {
     'footer.copyright': '© 2026 Francisco Entertainment. All rights reserved.',
     'footer.icp': 'Zhejiang ICP Reg. XXXXXXXX-1',
 
-    // Hero
+    // Hero — Event details stay Chinese (poster/material text)
     'hero.status': 'Now Open · HOT',
     'hero.title': '2026 TEEN TOP',
-    'hero.subtitle': 'Fan Meeting',
-    'hero.locationTag': 'China Tour',
-    'hero.location': 'Chongqing',
+    'hero.subtitle': '粉丝见面会',
+    'hero.locationTag': '中国站',
+    'hero.location': '重庆',
     'hero.date': '2026.08.29',
-    'hero.highlight': 'First China appearance by a 2nd-gen K-pop group in nearly 10 years',
+    'hero.highlight': '二代男团近10年首次登陆国内',
     'hero.description':
-      'Legendary 2nd-generation K-pop group TEEN TOP makes their long-awaited debut in China with an exclusive fan meeting. Enjoy up-close interactions, fan benefits, autograph sessions, and photo opportunities — a once-in-a-lifetime experience crafted just for fans.',
+      '韩国二代传奇男团 TEEN TOP 首次登陆国内，举办专属粉丝见面会。全场近距离互动、粉丝福利环节、签名合影机会，一场专属于粉丝的见面盛会。',
     'hero.buyTicket': 'Get Tickets',
     'hero.viewMore': 'More Events',
-    'hero.videoAria': '2026 TEEN TOP Fan Meeting Promotional Video',
+    'hero.videoAria': '2026 TEEN TOP 粉丝见面会宣传视频',
     'hero.tagline': 'Bridging China-Korea Entertainment',
     'hero.since': 'Since 2023',
     'hero.scroll': 'Scroll',
@@ -248,34 +248,35 @@ const translations = {
     'cases.badge': 'PORTFOLIO',
     'cases.title': 'Our Work',
     'cases.subtitle': 'Selected projects showcasing Francisco Entertainment\'s expertise',
-    'cases.featuredStatus': 'Now Open',
-    'cases.featuredType': 'Fan Meeting',
+    // Case statuses/types stay Chinese — visual labels on poster cards
+    'cases.featuredStatus': '火热进行中',
+    'cases.featuredType': '粉丝见面会',
     'cases.featuredHighlight':
-      'First China appearance by a 2nd-gen K-pop group in nearly 10 years',
+      '二代男团近10年首次登陆国内',
     'cases.buyTicket': 'Get Tickets',
     'cases.consult': 'Inquire',
-    'cases.benefitBadge': 'Fan Benefits',
-    'cases.benefitAlt': '2026 TEEN TOP Fan Meeting China - Benefits',
+    'cases.benefitBadge': '粉丝福利表',
+    'cases.benefitAlt': '2026 TEEN TOP 粉丝见面会 中国站 - 福利表',
     'cases.bottomCta': 'Partner With Us',
-    'cases.status.hot': 'Now Open',
-    'cases.status.coming': 'Coming Soon',
-    'cases.status.ended': 'Completed',
-    'cases.type.fanmeet': 'Fan Meeting',
-    'cases.type.concert': 'Concert',
-    'cases.type.brand': 'Brand Event',
-    'cases.type.business': 'Partnership',
-    'cases.fanmeet': 'Fan Meeting',
+    'cases.status.hot': '火热进行中',
+    'cases.status.coming': '即将开启',
+    'cases.status.ended': '已结束',
+    'cases.type.fanmeet': '粉丝见面会',
+    'cases.type.concert': '演唱会',
+    'cases.type.brand': '品牌活动',
+    'cases.type.business': '商务合作',
+    'cases.fanmeet': '粉丝见面会',
 
-    // Cases — from data
-    'case.1.name': '2026 TEEN TOP Fan Meeting · China',
+    // Cases — from data (keep original Chinese, these are poster/project names)
+    'case.1.name': '2026 TEEN TOP 粉丝见面会 中国站',
     'case.1.desc':
-      'Legendary 2nd-gen K-pop group TEEN TOP\'s long-awaited China debut — Francisco Entertainment handled end-to-end planning and execution including fan interactions, benefits, ticketing, and full-chain event services.',
-    'case.2.name': 'SHINHWA Fan Meeting',
+      '韩国二代传奇男团 TEEN TOP 近10年首次登陆国内，Francisco Entertainment 全案策划执行粉丝见面会，含粉丝互动、福利环节、票务运营全链路服务。',
+    'case.2.name': '神话 SHINHWA 粉丝见面会',
     'case.2.desc':
-      'Korea\'s longest-running original idol group SHINHWA fan meeting — carrying a generation of K-pop memories with an exclusive fan experience.',
-    'case.3.name': 'Majestic Yangtze Super Star Concert',
+      '韩国最长寿元祖男团神话 SHINHWA 粉丝见面会，承载一代韩流记忆，打造专属粉丝互动体验',
+    'case.3.name': '大美长江 Super Star 演唱会',
     'case.3.desc':
-      'Majestic Yangtze Super Star concert featuring Jeff Chang, Angela Zhang, Lil Ghost, and The Landlord\'s Cat — a cross-generational music feast.',
+      '大美长江 Super Star 群星演唱会，集结张信哲、张韶涵、小鬼王琳凯、房东的猫等实力歌手，呈现跨世代音乐盛宴',
 
     // Contact
     'contact.badge': 'CONTACT',
@@ -314,21 +315,21 @@ const translations = {
     '404.desc': 'Page Not Found',
     '404.back': 'Back to Home',
 
-    // Company
-    'company.nameZh': 'Fan Ke Culture',
+    // Company — brand names stay Chinese
+    'company.nameZh': '饭壳文化',
     'company.nameEn': 'Francisco Entertainment',
     'company.tagline': 'Bridging China-Korea Entertainment',
-    'company.subtitle': 'Fan Ke Culture · Francisco Entertainment',
+    'company.subtitle': '饭壳文化 · Francisco Entertainment',
     'company.description':
-      'Fan Ke Culture (Francisco Entertainment) is an innovative company specializing in international entertainment management, headquartered in Hangzhou. We are dedicated to building bridges between the Chinese and Korean entertainment industries, creating outstanding value for artists, brands, and fans.',
-    'company.positioning': 'A rising force in international entertainment management',
+      '饭壳文化是一家专注于涉外娱乐经纪的创新型公司，总部位于杭州。我们致力于搭建中韩娱乐产业的合作桥梁，为艺人、品牌和粉丝创造卓越价值。',
+    'company.positioning': '专注涉外娱乐经纪的新锐公司',
     'company.headquarters': 'Hangzhou',
     'company.address': 'Room 807, Building T1, Qiding Center, No. 298 Shixiang Road, Gongshu District, Hangzhou',
     'company.email': 'hanyiliang@francisco.com.cn',
     'company.founder': 'Francisco Han',
     'company.founderTitle': 'Founder & CEO',
     'company.vision':
-      'To become the core link connecting Asia\'s entertainment industry, driving deep integration of China-Korea cultural exchange and commercial collaboration.',
+      '成为连接亚洲娱乐产业的核心纽带，推动中韩文化交流与商业合作的深度融合。',
   },
 
   ko: {
@@ -349,19 +350,19 @@ const translations = {
     'footer.copyright': '© 2026 Francisco Entertainment. All rights reserved.',
     'footer.icp': 'Zhejiang ICP Reg. XXXXXXXX-1',
 
-    // Hero
+    // Hero — Event details stay Chinese (poster/material text)
     'hero.status': '진행 중 · HOT',
     'hero.title': '2026 TEEN TOP',
-    'hero.subtitle': '팬미팅',
-    'hero.locationTag': '중국 투어',
-    'hero.location': '충칭',
+    'hero.subtitle': '粉丝见面会',
+    'hero.locationTag': '中国站',
+    'hero.location': '重庆',
     'hero.date': '2026.08.29',
-    'hero.highlight': '2세대 K-pop 그룹, 약 10년 만에 중국 첫 방문',
+    'hero.highlight': '二代男团近10年首次登陆国内',
     'hero.description':
-      '한국 전설의 2세대 아이돌 TEEN TOP이 마침내 중국에서 첫 팬미팅을 개최합니다. 가까이서 즐기는 특별한 만남, 팬福利(혜택) 이벤트, 사인회 및 포토타임까지 — 팬들을 위한 단 하나뿐인 특별한 경험을 선사합니다.',
+      '韩国二代传奇男团 TEEN TOP 首次登陆国内，举办专属粉丝见面会。全场近距离互动、粉丝福利环节、签名合影机会，一场专属于粉丝的见面盛会。',
     'hero.buyTicket': '티켓 예매',
     'hero.viewMore': '더 많은 이벤트',
-    'hero.videoAria': '2026 TEEN TOP 팬미팅 프로모션 영상',
+    'hero.videoAria': '2026 TEEN TOP 粉丝见面会宣传视频',
     'hero.tagline': '한중 엔터테인먼트를 잇는 젊은 힘',
     'hero.since': 'Since 2023',
     'hero.scroll': 'Scroll',
@@ -414,33 +415,34 @@ const translations = {
     'cases.badge': 'PORTFOLIO',
     'cases.title': '주요 실적',
     'cases.subtitle': 'Francisco Entertainment의 전문성을 보여주는 대표 프로젝트',
-    'cases.featuredStatus': '진행 중',
-    'cases.featuredType': '팬미팅',
-    'cases.featuredHighlight': '2세대 K-pop 그룹, 약 10년 만에 중국 첫 방문',
+    // Case statuses/types stay Chinese — visual labels on poster cards
+    'cases.featuredStatus': '火热进行中',
+    'cases.featuredType': '粉丝见面会',
+    'cases.featuredHighlight': '二代男团近10年首次登陆国内',
     'cases.buyTicket': '티켓 예매',
     'cases.consult': '문의하기',
-    'cases.benefitBadge': '팬福利 안내',
-    'cases.benefitAlt': '2026 TEEN TOP 팬미팅 중국 - 福利 안내',
+    'cases.benefitBadge': '粉丝福利表',
+    'cases.benefitAlt': '2026 TEEN TOP 粉丝见面会 中国站 - 福利表',
     'cases.bottomCta': '협력 문의',
-    'cases.status.hot': '진행 중',
-    'cases.status.coming': '오픈 예정',
-    'cases.status.ended': '종료',
-    'cases.type.fanmeet': '팬미팅',
-    'cases.type.concert': '콘서트',
-    'cases.type.brand': '브랜드 이벤트',
-    'cases.type.business': '비즈니스 협력',
-    'cases.fanmeet': '팬미팅',
+    'cases.status.hot': '火热进行中',
+    'cases.status.coming': '即将开启',
+    'cases.status.ended': '已结束',
+    'cases.type.fanmeet': '粉丝见面会',
+    'cases.type.concert': '演唱会',
+    'cases.type.brand': '品牌活动',
+    'cases.type.business': '商务合作',
+    'cases.fanmeet': '粉丝见面会',
 
-    // Cases — from data
-    'case.1.name': '2026 TEEN TOP 팬미팅 · 중국',
+    // Cases — from data (keep original Chinese, these are poster/project names)
+    'case.1.name': '2026 TEEN TOP 粉丝见面会 中国站',
     'case.1.desc':
-      '한국 전설의 2세대 아이돌 TEEN TOP의 중국 첫 방문 — Francisco Entertainment가 팬 상호작용, 福利 이벤트, 티켓 운영까지 전체 기획 및 실행을 담당했습니다.',
-    'case.2.name': '신화 SHINHWA 팬미팅',
+      '韩国二代传奇男团 TEEN TOP 近10年首次登陆国内，Francisco Entertainment 全案策划执行粉丝见面会，含粉丝互动、福利环节、票务运营全链路服务。',
+    'case.2.name': '神话 SHINHWA 粉丝见面会',
     'case.2.desc':
-      '한국 최장수 원조 아이돌 신화 SHINHWA 팬미팅 — 한류의 추억을 담아 특별한 팬 경험을 선사했습니다.',
-    'case.3.name': '대미장강 Super Star 콘서트',
+      '韩国最长寿元祖男团神话 SHINHWA 粉丝见面会，承载一代韩流记忆，打造专属粉丝互动体验',
+    'case.3.name': '大美长江 Super Star 演唱会',
     'case.3.desc':
-      '대미장강 Super Star 콘서트 — 장신저(Zhang Xinzhe), 장소함(Angela Zhang), 샤오구이(Lil Ghost), 지주냥의 고양이 등 실력파 아티스트들이 함께한 세대를 아우르는 음악 축제.',
+      '大美长江 Super Star 群星演唱会，集结张信哲、张韶涵、小鬼王琳凯、房东的猫等实力歌手，呈现跨世代音乐盛宴',
 
     // Contact
     'contact.badge': 'CONTACT',
@@ -479,21 +481,21 @@ const translations = {
     '404.desc': '페이지를 찾을 수 없습니다',
     '404.back': '홈으로',
 
-    // Company
-    'company.nameZh': '판커 문화',
+    // Company — brand names stay Chinese
+    'company.nameZh': '饭壳文化',
     'company.nameEn': 'Francisco Entertainment',
     'company.tagline': '한중 엔터테인먼트를 잇는 젊은 힘',
-    'company.subtitle': '판커 문화 · Francisco Entertainment',
+    'company.subtitle': '饭壳文化 · Francisco Entertainment',
     'company.description':
-      '판커 문화(Francisco Entertainment)는 항저우에 본사를 둔 혁신적인 해외 엔터테인먼트 매니지먼트 기업으로, 한중 엔터테인먼트 산업의 가교 역할을 하며 아티스트, 브랜드, 팬 여러분께 탁월한 가치를 제공합니다.',
-    'company.positioning': '해외 엔터테인먼트 매니지먼트의 신흥 강자',
+      '饭壳文化是一家专注于涉外娱乐经纪的创新型公司，总部位于杭州。我们致力于搭建中韩娱乐产业的合作桥梁，为艺人、品牌和粉丝创造卓越价值。',
+    'company.positioning': '专注涉外娱乐经纪的新锐公司',
     'company.headquarters': '항저우',
     'company.address': '중국 저장성 항저우시 궁수구 스샹루 298호 치딩센터 T1동 807호',
     'company.email': 'hanyiliang@francisco.com.cn',
     'company.founder': 'Francisco Han',
     'company.founderTitle': '설립자 & CEO',
     'company.vision':
-      '아시아 엔터테인먼트 산업을 연결하는 핵심 축이 되어, 한중 문화 교류와 비즈니스 협력의 심화를 추진합니다.',
+      '成为连接亚洲娱乐产业的核心纽带，推动中韩文化交流与商业合作的深度融合。',
   },
 }
 

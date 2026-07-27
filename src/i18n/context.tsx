@@ -1,10 +1,12 @@
 import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react'
 import translations, { Lang, TranslationKey } from './translations'
 
+export type { Lang, TranslationKey } from './translations'
+
 interface LanguageContextType {
   lang: Lang
   setLang: (lang: Lang) => void
-  t: (key: TranslationKey) => string
+  t: (key: TranslationKey | string) => string
 }
 
 const LanguageContext = createContext<LanguageContextType | null>(null)
@@ -33,8 +35,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const t = useCallback(
-    (key: TranslationKey): string => {
-      return translations[lang][key] ?? translations.zh[key] ?? key
+    (key: TranslationKey | string): string => {
+      return translations[lang][key as TranslationKey] ?? translations.zh[key as TranslationKey] ?? key
     },
     [lang],
   )
