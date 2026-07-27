@@ -48,7 +48,7 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['Space Grotesk', 'Noto Sans SC', 'sans-serif'],
+        sans: ['Fredoka', 'ZCOOL QingKe HuangYou', 'Noto Sans SC', 'sans-serif'],
       },
     },
   },
