@@ -69,3 +69,35 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(353 99% 29% / 0.6);
 }
+/* 品牌发光效果 */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(147, 1, 19, 0.4), 0 0 40px rgba(147, 1, 19, 0.2);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(147, 1, 19, 0.5);
+}
+
+/* 背景装饰光晕 */
+.bg-glow {
+  position: relative;
+}
+
+.bg-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(147, 1, 19, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Logo 白色融合 */
+.logo-blend {
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.15));
+}
