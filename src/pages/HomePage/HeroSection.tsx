@@ -132,15 +132,6 @@ export default function HeroSection() {
 
               <div className="absolute -top-3 -right-3 w-16 h-16 sm:w-20 sm:h-20 border-2 border-primary/40 rounded-2xl -z-10" />
               <div className="absolute -bottom-4 -left-4 w-24 h-24 sm:w-32 sm:h-32 bg-primary/20 rounded-full blur-3xl -z-10" />
-
-              <div className="absolute -bottom-3 -right-3 px-3 py-2 sm:px-4 sm:py-3 bg-background/90 backdrop-blur-md rounded-lg border border-border/40 shadow-xl">
-                <div className="text-[9px] sm:text-[10px] text-muted-foreground tracking-widest uppercase mb-0.5">
-                  Presented by
-                </div>
-                <div className="text-xs sm:text-sm font-bold text-foreground">
-                  Francisco Entertainment
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
