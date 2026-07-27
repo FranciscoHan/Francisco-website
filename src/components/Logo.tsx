@@ -6,7 +6,7 @@ interface LogoProps {
 }
 
 export default function Logo({ className, size = 'md' }: LogoProps) {
-  const height = size === 'sm' ? 28 : 36
+  const height = size === 'sm' ? 36 : 52
 
   return (
     <img
