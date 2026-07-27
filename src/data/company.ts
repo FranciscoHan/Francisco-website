@@ -30,5 +30,5 @@ export const MOCK_COMPANY: ICompany = {
   vision: '成为连接亚洲娱乐产业的核心纽带，推动中韩文化交流与商业合作的深度融合。',
   founder: 'Francisco Han',
   founderTitle: '创始人 & CEO',
-  headquarters: '杭州滨江',
+  headquarters: '杭州拱墅',
 }

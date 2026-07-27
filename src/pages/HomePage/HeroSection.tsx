@@ -3,8 +3,8 @@ import { ArrowDown, Ticket, Calendar, MapPin, ExternalLink } from 'lucide-react'
 import { MOCK_COMPANY } from '@/data/company'
 import { Image } from '@/components/ui/image'
 
-const HERO_BG = 'https://aka.doubaocdn.com/s/your-hero-bg-url'
 const TEENTOP_POSTER = 'https://aka.doubaocdn.com/s/oCDv1wqgmM'
+
 const TICKET_URL = 'https://you.ctrip.com/sight/chongqing158/156424489.html'
 
 export default function HeroSection() {
@@ -22,12 +22,19 @@ export default function HeroSection() {
       id="hero"
       className="relative w-full min-h-screen flex items-center overflow-hidden pt-20 pb-16"
     >
-      {/* Background Image with Parallax */}
+      {/* Background with Parallax */}
       <motion.div style={{ y }} className="absolute inset-0 z-0">
-        <Image
-          src={HERO_BG}
-          alt="Hero Background"
-          className="w-full h-full object-cover scale-110"
+        {/* Subtle gradient + dot pattern to replace broken background image */}
+        <div
+          className="w-full h-full scale-110"
+          style={{
+            background: `
+              radial-gradient(ellipse at 30% 20%, hsl(353 99% 29% / 0.12) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 60%, hsl(353 99% 29% / 0.08) 0%, transparent 50%),
+              radial-gradient(circle, hsl(0 0% 100% / 0.03) 1px, transparent 1px)
+            `,
+            backgroundSize: '100% 100%, 100% 100%, 32px 32px',
+          }}
         />
       </motion.div>
 
@@ -52,10 +59,10 @@ export default function HeroSection() {
               火热进行中 · HOT
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2">
               2026 TEEN TOP
             </h2>
-            <h1 className="text-4xl md:text-6xl font-black tracking-tight text-foreground leading-[1.1] mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight text-foreground leading-[1.1] mb-4">
               粉丝见面会
               <br />
               <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
@@ -84,24 +91,24 @@ export default function HeroSection() {
               全场近距离互动、粉丝福利环节、签名合影机会，一场专属于粉丝的见面盛会。
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <a
                 href={TICKET_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="group relative px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 flex items-center gap-2"
+                className="group relative px-6 sm:px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 flex items-center justify-center gap-2 text-center"
               >
-                <Ticket className="size-5" />
+                <Ticket className="size-5 shrink-0" />
                 <span>立即购票</span>
-                <ExternalLink className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ExternalLink className="size-4 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <a
                 href="#cases"
                 onClick={(e) => handleScrollTo(e, '#cases')}
-                className="px-8 py-4 border border-border/60 text-foreground font-medium rounded-lg hover:bg-muted/50 hover:border-border transition-all duration-300 flex items-center gap-2"
+                className="px-6 sm:px-8 py-4 border border-border/60 text-foreground font-medium rounded-lg hover:bg-muted/50 hover:border-border transition-all duration-300 flex items-center justify-center gap-2 text-center"
               >
                 查看更多活动
-                <ArrowDown className="size-4" />
+                <ArrowDown className="size-4 shrink-0" />
               </a>
             </div>
           </motion.div>
@@ -113,8 +120,8 @@ export default function HeroSection() {
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="order-1 lg:order-2 flex justify-center lg:justify-end"
           >
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-border/30 max-w-sm w-full">
+            <div className="relative w-full max-w-[280px] sm:max-w-sm mx-auto lg:mx-0">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-border/30">
                 <Image
                   src={TEENTOP_POSTER}
                   alt="2026 TEEN TOP 粉丝见面会 中国站"
@@ -123,14 +130,14 @@ export default function HeroSection() {
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/40 via-transparent to-transparent" />
               </div>
 
-              <div className="absolute -top-4 -right-4 w-20 h-20 border-2 border-primary/40 rounded-2xl -z-10" />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl -z-10" />
+              <div className="absolute -top-3 -right-3 w-16 h-16 sm:w-20 sm:h-20 border-2 border-primary/40 rounded-2xl -z-10" />
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 sm:w-32 sm:h-32 bg-primary/20 rounded-full blur-3xl -z-10" />
 
-              <div className="absolute -bottom-4 -right-4 px-4 py-3 bg-background/90 backdrop-blur-md rounded-lg border border-border/40 shadow-xl">
-                <div className="text-[10px] text-muted-foreground tracking-widest uppercase mb-0.5">
+              <div className="absolute -bottom-3 -right-3 px-3 py-2 sm:px-4 sm:py-3 bg-background/90 backdrop-blur-md rounded-lg border border-border/40 shadow-xl">
+                <div className="text-[9px] sm:text-[10px] text-muted-foreground tracking-widest uppercase mb-0.5">
                   Presented by
                 </div>
-                <div className="text-sm font-bold text-foreground">
+                <div className="text-xs sm:text-sm font-bold text-foreground">
                   Francisco Entertainment
                 </div>
               </div>
@@ -143,18 +150,18 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="hidden lg:block mt-16 pt-8 border-t border-border/30"
+          className="hidden md:block mt-16 pt-8 border-t border-border/30"
         >
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <div className="text-xs text-muted-foreground tracking-widest uppercase mb-1">
                 {MOCK_COMPANY.nameEn}
               </div>
-              <div className="text-2xl font-black text-foreground tracking-tight">
+              <div className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
                 连接中韩娱乐的年轻力量
               </div>
             </div>
-            <div className="text-right">
+            <div className="text-left sm:text-right">
               <div className="text-xs text-muted-foreground tracking-widest uppercase mb-1">
                 Since 2023
               </div>

@@ -34,12 +34,12 @@ export default function ContactSection() {
     e.preventDefault()
     const formData = new FormData(e.currentTarget as HTMLFormElement)
     const name = formData.get('name')
-    const email = formData.get('email')
+    const phone = formData.get('phone')
     const company = formData.get('company')
     const type = formData.get('type')
     const message = formData.get('message')
 
-    if (!name || !email) {
+    if (!name || !phone) {
       toast.error('请填写姓名和联系电话')
       return
     }
@@ -50,7 +50,7 @@ export default function ContactSection() {
     const submission = {
       id: Date.now().toString(),
       name: String(name),
-      phone: String(email),
+      phone: String(phone),
       company: company ? String(company) : '',
       type: type ? String(type) : '',
       message: message ? String(message) : '',
@@ -152,7 +152,7 @@ export default function ContactSection() {
             {/* Social Media Cards */}
             <div>
               <div className="text-sm text-muted-foreground mb-3">关注我们</div>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
                 {MOCK_CONTACT.socialLinks.map((social) => {
                   const isClickable = social.url && social.url !== '#'
                   const cardContent = (
@@ -161,10 +161,10 @@ export default function ContactSection() {
                         <SocialIcon platform={social.icon} />
                       </div>
                       <div className="text-center">
-                        <div className="text-sm font-semibold text-foreground">
+                        <div className="text-xs sm:text-sm font-semibold text-foreground">
                           {social.name}
                         </div>
-                        <div className="text-[11px] text-muted-foreground truncate max-w-full">
+                        <div className="text-[10px] sm:text-[11px] text-muted-foreground truncate max-w-full">
                           {social.handle}
                         </div>
                       </div>
@@ -180,14 +180,14 @@ export default function ContactSection() {
                       href={social.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex flex-col items-center gap-2 p-4 rounded-xl border border-border/50 bg-background/50 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+                      className="group flex flex-col items-center gap-1.5 sm:gap-2 p-3 sm:p-4 rounded-xl border border-border/50 bg-background/50 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
                     >
                       {cardContent}
                     </a>
                   ) : (
                     <div
                       key={social.name}
-                      className="flex flex-col items-center gap-2 p-4 rounded-xl border border-border/50 bg-background/50 cursor-default opacity-80"
+                      className="flex flex-col items-center gap-1.5 sm:gap-2 p-3 sm:p-4 rounded-xl border border-border/50 bg-background/50 cursor-default opacity-80"
                       title="暂无网页版主页"
                     >
                       {cardContent}
@@ -222,7 +222,7 @@ export default function ContactSection() {
                       联系电话
                     </label>
                     <input
-                      name="email"
+                      name="phone"
                       type="tel"
                       placeholder="请输入电话"
                       required

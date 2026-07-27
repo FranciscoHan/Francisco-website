@@ -96,18 +96,18 @@ export default function CasesSection() {
                 </div>
 
                 {/* Right: Content */}
-                <div className="lg:col-span-2 p-8 md:p-10 flex flex-col justify-center">
+                <div className="lg:col-span-2 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
                   <div className="flex flex-wrap items-center gap-2 mb-4">
-                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 text-xs">
                       <Tag className="size-3 mr-1.5" />
                       {featuredCase.type}
                     </Badge>
-                    <Badge variant="outline" className="text-muted-foreground">
+                    <Badge variant="outline" className="text-muted-foreground text-xs">
                       <Calendar className="size-3 mr-1.5" />
                       {featuredCase.date}
                     </Badge>
                     {featuredCase.location && (
-                      <Badge variant="outline" className="text-muted-foreground">
+                      <Badge variant="outline" className="text-muted-foreground text-xs">
                         <MapPin className="size-3 mr-1.5" />
                         {featuredCase.location}
                       </Badge>
@@ -115,26 +115,26 @@ export default function CasesSection() {
                   </div>
 
                   {featuredCase.highlight && (
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-primary/30 bg-primary/10 text-foreground text-sm font-semibold mb-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-primary/30 bg-primary/10 text-foreground text-xs sm:text-sm font-semibold mb-4">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shrink-0" />
                       {featuredCase.highlight}
                     </div>
                   )}
 
-                  <h3 className="text-2xl md:text-3xl font-black text-foreground leading-tight mb-4">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-foreground leading-tight mb-4">
                     {featuredCase.name}
                   </h3>
 
-                  <p className="text-muted-foreground leading-relaxed mb-8">
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6 sm:mb-8">
                     {featuredCase.description}
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-3">
+                  <div className="flex flex-col xs:flex-row gap-3">
                     <a
                       href={TICKET_URL}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5"
+                      className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 text-sm sm:text-base"
                     >
                       立即购票
                       <ExternalLink className="size-4" />
@@ -143,7 +143,7 @@ export default function CasesSection() {
                       href="#contact"
                       onClick={(e) => handleScrollTo(e, '#contact')}
                     >
-                      <button className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border/60 text-foreground font-medium rounded-lg hover:bg-muted/50 hover:border-border transition-all duration-300">
+                      <button className="w-full inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 border border-border/60 text-foreground font-medium rounded-lg hover:bg-muted/50 hover:border-border transition-all duration-300 text-sm sm:text-base">
                         咨询合作
                         <ArrowUpRight className="size-4" />
                       </button>
@@ -174,7 +174,7 @@ export default function CasesSection() {
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 {caseItem.textCover ? (
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#0a0506] via-[#14080a] to-[#0a0506] flex flex-col justify-between p-6 md:p-7">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#0a0506] via-[#14080a] to-[#0a0506] flex flex-col justify-between p-5 sm:p-6 md:p-7">
                     <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
                     <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-primary/50 via-primary/20 to-transparent" />
                     <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-primary/25 to-transparent" />
@@ -194,10 +194,10 @@ export default function CasesSection() {
                     </div>
 
                     <div className="relative z-10 flex-1 flex flex-col justify-center">
-                      <h4 className="text-2xl md:text-3xl font-black text-foreground tracking-tight leading-none mb-1">
+                      <h4 className="text-xl sm:text-2xl md:text-3xl font-black text-foreground tracking-tight leading-none mb-1">
                         {caseItem.textCoverLine1}
                       </h4>
-                      <h4 className="text-xl md:text-2xl font-black italic bg-gradient-to-r from-primary via-[#ff6b7a] to-[#ffb3ba] bg-clip-text text-transparent tracking-wide">
+                      <h4 className="text-lg sm:text-xl md:text-2xl font-black italic bg-gradient-to-r from-primary via-[#ff6b7a] to-[#ffb3ba] bg-clip-text text-transparent tracking-wide">
                         {caseItem.textCoverLine2}
                       </h4>
                     </div>

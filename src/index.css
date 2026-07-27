@@ -22,6 +22,8 @@
     --accent-foreground: hsl(0 0% 90%);
     --destructive: hsl(0 84% 60%);
     --destructive-foreground: hsl(0 0% 98%);
+    --success: hsl(142 71% 35%);
+    --success-foreground: hsl(0 0% 98%);
     --border: hsl(0 0% 16%);
     --input: hsl(0 0% 16%);
     --ring: hsl(353 99% 29%);
@@ -45,6 +47,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: hsl(0 0% 4%);
   color: hsl(0 0% 98%);
+  overflow-x: hidden;
 }
 
 ::selection {
