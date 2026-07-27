@@ -75,7 +75,7 @@ export default function HeroSection() {
               </div>
               <div className="flex items-center gap-2 text-muted-foreground text-sm">
                 <MapPin className="size-4 text-primary" />
-                <span>未公开场所</span>
+                <span>重庆</span>
               </div>
             </div>
 

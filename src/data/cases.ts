@@ -28,7 +28,7 @@ export const MOCK_CASES: ICase[] = [
     featured: true,
     status: '火热进行中',
     extraImageUrl: 'https://aka.doubaocdn.com/s/V2Bg1wqgmM',
-    location: '未公开场所',
+    location: '重庆',
     highlight: '二代男团近10年首次登陆国内',
   },
   {
